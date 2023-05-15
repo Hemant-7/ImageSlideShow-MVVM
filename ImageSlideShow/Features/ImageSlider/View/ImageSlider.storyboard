@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image Slider View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ImageSliderViewController" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ImageSliderViewController" customModule="ImageSlideShow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zHc-0Y-7dU">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wjR-S6-PFR">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="IPB-wq-Lzn">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Yq-KO-vWL">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zx5-ml-msX">
+                                                <rect key="frame" x="319" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="OaR-gO-grs"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <imageReference key="image" image="square.and.arrow.up" catalog="system" symbolScale="large"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="shareButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WAU-q6-t8n"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grC-pu-ay7">
+                                                <rect key="frame" x="24" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="Eme-yM-9ky"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <imageReference key="image" image="multiply" catalog="system" symbolScale="large"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancelButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5Ec-Y0-tGS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="grC-pu-ay7" firstAttribute="leading" secondItem="1Yq-KO-vWL" secondAttribute="leading" constant="24" id="8Uf-e2-7wx"/>
+                                            <constraint firstAttribute="height" constant="50" id="RTC-Au-Tgv"/>
+                                            <constraint firstAttribute="trailing" secondItem="Zx5-ml-msX" secondAttribute="trailing" constant="24" id="VhK-0z-yGR"/>
+                                            <constraint firstAttribute="bottom" secondItem="grC-pu-ay7" secondAttribute="bottom" id="eOY-hi-wC5"/>
+                                            <constraint firstAttribute="bottom" secondItem="Zx5-ml-msX" secondAttribute="bottom" id="hSg-KK-447"/>
+                                            <constraint firstItem="grC-pu-ay7" firstAttribute="top" secondItem="1Yq-KO-vWL" secondAttribute="top" id="qsg-zy-GUg"/>
+                                            <constraint firstItem="Zx5-ml-msX" firstAttribute="top" secondItem="1Yq-KO-vWL" secondAttribute="top" id="zbo-NF-jS8"/>
+                                        </constraints>
+                                    </view>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="EWo-SE-ECc">
+                                        <rect key="frame" x="50" y="717" width="293" height="26"/>
+                                        <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </pageControl>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="wjR-S6-PFR" firstAttribute="leading" secondItem="zHc-0Y-7dU" secondAttribute="leading" id="Ert-is-Q0I"/>
+                                    <constraint firstAttribute="trailing" secondItem="EWo-SE-ECc" secondAttribute="trailing" constant="50" id="ICq-XL-5RJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="EWo-SE-ECc" secondAttribute="bottom" constant="16" id="OU2-gl-2Yg"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Yq-KO-vWL" secondAttribute="trailing" id="VJ5-zG-jfe"/>
+                                    <constraint firstAttribute="trailing" secondItem="wjR-S6-PFR" secondAttribute="trailing" id="fkj-Lx-WH4"/>
+                                    <constraint firstItem="EWo-SE-ECc" firstAttribute="leading" secondItem="zHc-0Y-7dU" secondAttribute="leading" constant="50" id="hbg-b7-LBL"/>
+                                    <constraint firstItem="1Yq-KO-vWL" firstAttribute="leading" secondItem="zHc-0Y-7dU" secondAttribute="leading" id="rLX-KJ-HFA"/>
+                                    <constraint firstItem="wjR-S6-PFR" firstAttribute="top" secondItem="zHc-0Y-7dU" secondAttribute="top" id="t2K-HJ-9tQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="wjR-S6-PFR" secondAttribute="bottom" id="ugC-Ls-mXn"/>
+                                    <constraint firstItem="1Yq-KO-vWL" firstAttribute="top" secondItem="zHc-0Y-7dU" secondAttribute="top" id="xgM-k4-CB8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zHc-0Y-7dU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Dzo-Py-Khl"/>
+                            <constraint firstItem="zHc-0Y-7dU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="qLX-TL-7im"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="zHc-0Y-7dU" secondAttribute="bottom" id="tpD-PD-1y4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zHc-0Y-7dU" secondAttribute="trailing" id="u1y-Sk-R4F"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="wjR-S6-PFR" id="sbe-qI-Pwh"/>
+                        <outlet property="pageControl" destination="EWo-SE-ECc" id="U8d-LF-GQP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.458015267175568" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="multiply" catalog="system" width="128" height="111"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
