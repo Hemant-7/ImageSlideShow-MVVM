@@ -50,7 +50,11 @@ class ImageSliderViewController: UIViewController {
     }
     
     @IBAction func shareButton(_ sender: UIButton) {
-        
+        if let name = URL(string: arrayOfImages[selectedIndex].image) {
+          let objectsToShare = [name]
+          let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+          self.present(activityVC, animated: true, completion: nil)
+        }
     }
 }
 
