@@ -77,5 +77,6 @@ extension ImageSliderViewController: UICollectionViewDelegate, UICollectionViewD
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let currentPage = Int(scrollView.contentOffset.x / collectionView.frame.size.width)
         pageControl.currentPage = currentPage
+        selectedIndex = currentPage
     }
 }
