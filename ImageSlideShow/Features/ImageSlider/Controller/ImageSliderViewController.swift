@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol GetIndex {
+    func visibleItem(with index: Int)
+}
+
 class ImageSliderViewController: UIViewController {
     
     //MARK: - Outlet's
@@ -16,6 +20,7 @@ class ImageSliderViewController: UIViewController {
     //MARK: - Properties
     var arrayOfImages = [GalleryModel]()
     var selectedIndex = 0
+    var getIndex: GetIndex?
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -42,18 +47,27 @@ class ImageSliderViewController: UIViewController {
         
         pageControl.numberOfPages = arrayOfImages.count
         self.pageControl.currentPage = selectedIndex
+        
+        if arrayOfImages.count <= 1 {
+            pageControl.isHidden = true
+        } else {
+            pageControl.isHidden = false
+        }
     }
     
     //MARK: - Button Action
     @IBAction func cancelButton(_ sender: UIButton) {
+        if let getIndex = getIndex {
+            getIndex.visibleItem(with: selectedIndex)
+        }
         self.dismiss(animated: true)
     }
     
     @IBAction func shareButton(_ sender: UIButton) {
         if let name = URL(string: arrayOfImages[selectedIndex].image) {
-          let objectsToShare = [name]
-          let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-          self.present(activityVC, animated: true, completion: nil)
+            let objectsToShare = [name]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            self.present(activityVC, animated: true, completion: nil)
         }
     }
 }

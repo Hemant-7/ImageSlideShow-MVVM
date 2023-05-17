@@ -56,6 +56,13 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
         let vc = storyboard.instantiateViewController(withIdentifier: "ImageSliderViewController") as! ImageSliderViewController
         vc.arrayOfImages = viewModel.arrayOfImages
         vc.selectedIndex = indexPath.row
+        vc.getIndex = self
         self.present(vc, animated: false, completion: nil)
+    }
+}
+
+extension GalleryViewController: GetIndex {
+    func visibleItem(with index: Int) {
+        collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredVertically, animated: true)
     }
 }
